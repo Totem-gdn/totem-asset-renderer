@@ -69,7 +69,7 @@
                 "key": "#362714"
             }
         ]},
-    {"description": "Human Hair Color", "id": "human_hair_color", "type": "map", "gene": 1, "start": 4, "length": 2, 
+    {"description": "Human Hair Color", "id": "human_hair_color", "type": "map", "gene": 1, "start": 4, "length": 3, 
         "values": [
             {
                 "value": 0,
@@ -105,7 +105,7 @@
             }
         ]
     },
-    {"description": "Human Eye Color", "id": "human_eye_color", "type": "map", "gene": 1, "start": 7, "length": 2,
+    {"description": "Human Eye Color", "id": "human_eye_color", "type": "map", "gene": 1, "start": 7, "length": 3,
         "values": [
             {
                 "value": 0,
@@ -141,7 +141,7 @@
             }
         ]
     },
-    {"description": "Hair Style", "id": "hair_styles", "type": "map", "gene": 1, "start": 10, "length": 2,
+    {"description": "Hair Style", "id": "hair_styles", "type": "map", "gene": 1, "start": 10, "length": 3,
         "values": [
             {
                 "value": 0,
@@ -190,7 +190,7 @@
             }
         ]
     },
-    {"description": "Weapon Material", "id": "weapon_material", "type": "map", "gene": 3, "start": 3, "length": 2,
+    {"description": "Weapon Material", "id": "weapon_material", "type": "map", "gene": 3, "start": 2, "length": 2,
         "values": [
             {
                 "value": 0,
