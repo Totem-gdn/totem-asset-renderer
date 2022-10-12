@@ -178,7 +178,7 @@
         ]
     },
 
-    {"description": "Weapon Type", "id": "weapon_type", "type": "map", "gene": 3, "start": 0, "length": 2,
+    {"description": "Weapon Type", "id": "weapon_type", "type": "map", "gene": 3, "start": 1, "length": 1,
         "values": [
             {
                 "value": 0,
@@ -210,6 +210,6 @@
             }
         ]
     },
-    {"description": "Primary Color", "id": "primary_color", "type": "Color", "gene": 2, "start": 0, "length": 23}
+    {"description": "Primary Color", "id": "primary_color", "type": "Color", "gene": 2, "start": 0, "length": 24}
 
 ]

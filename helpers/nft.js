@@ -68,6 +68,7 @@ class NFT {
       
 
       const result = this._parseHexString(tokenURI)
+      console.log('result', result);
       let rJson = {};
       if (type === 'item') {
         rJson = this._binItemToJson(result);
@@ -142,8 +143,8 @@ class NFT {
             color = partBin.includes('undefined') ? '#FFD011' : `rgb(${sep(partBin, 8).map(bin => parseInt(bin, 2)).join(',')})`;
           }
           if (key === 'id' && obj[key] === 'classical_element') {
-            const idx = parseInt(binary.slice(obj.gene * 32 + obj.start, obj.gene * 32 + obj.start + obj.length), 2);
-            type = obj.values[idx]?.key;
+            const value = parseInt(binary.slice(obj.gene * 32 + obj.start, obj.gene * 32 + obj.start + obj.length), 2);
+            type = obj.values.find(item => item.value === value)?.key || obj.values[0].key;
           }
         }
       }
@@ -199,13 +200,13 @@ class NFT {
             avatarSetting[obj.id] = parseInt(partBin, 2);
           }
           if (key === 'id' && obj.type === 'map') {
-            const idx = parseInt(binary.slice(obj.gene * 32 + obj.start, obj.gene * 32 + obj.start + obj.length), 2);
-            avatarSetting[obj.id] = obj.values[idx]?.key || avatarSetting[obj.id];
+            const value = parseInt(binary.slice(obj.gene * 32 + obj.start, obj.gene * 32 + obj.start + obj.length), 2);
+            avatarSetting[obj.id] = obj.values.find(item => item.value === value)?.key || obj.values[0].key;
           }
         }
       }
     }
-    avatarSetting.human_skin_color_darken = this.adjust(avatarSetting.human_skin_color, -20);
+    avatarSetting.human_skin_color_darken = this.adjust(avatarSetting.human_skin_color, -50);
     avatarSetting.human_hair_color_lighten = this.adjust(avatarSetting.human_hair_color, 150);
     
     return avatarSetting;
