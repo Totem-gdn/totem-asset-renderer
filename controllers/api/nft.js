@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs')
 const { readdir } = require('fs/promises');
-const nftHelper = require('../../helpers/nft')
+const nftHelper = require('../../helpers/dna-parser')
 
 class NFTController {
   async get (req, res, next) {
@@ -20,8 +20,8 @@ class NFTController {
       if (type === 'item') {
         res.render('layouts/item', {
           layout: 'item.hbs',
-          color: nft?.color || '#FFD011',
-          typeColor1: nft?.typeColors[0],
+          color: nft?.primary_color || '#FFD011',
+          typeColor1: nft?. [0],
           typeColor2: nft?.typeColors[1],
           typeColor3: nft?.typeColors[2],
           width: width,
