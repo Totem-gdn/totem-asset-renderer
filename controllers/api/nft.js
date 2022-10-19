@@ -21,6 +21,7 @@ class NFTController {
         res.render('layouts/item', {
           layout: 'item.hbs',
           color: nft?.primary_color || '#FFD011',
+          weaponColor: nft?.weaponColor,
           typeColor1: nft?. [0],
           typeColor2: nft?.typeColors[1],
           typeColor3: nft?.typeColors[2],
