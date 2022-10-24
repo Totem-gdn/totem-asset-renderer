@@ -17,6 +17,10 @@ class NFTController {
       const nft = await nftHelper.get(type, id);
       console.log('nfft', nft);
       res.setHeader('Content-Type', 'image/svg+xml');
+      const cacheMaxAge = process.env.CACHE_MAX_AGE 
+      if (cacheMaxAge) {
+        res.setHeader('Cache-Control', `public, max-age=${cacheMaxAge}`)
+      }
       if (type === 'item') {
         res.render('layouts/item', {
           layout: 'item.hbs',
