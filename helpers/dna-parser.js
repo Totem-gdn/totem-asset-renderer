@@ -87,8 +87,8 @@ class NFT {
   }
 
   generateAvatarJson(avatarSetting) {
-    avatarSetting['human_skin_color_darken'] = this.adjust(avatarSetting.human_skin_color, -50);
-    avatarSetting['human_hair_color_lighten'] = this.adjust(avatarSetting.human_hair_color, 150);
+    // avatarSetting['human_skin_color_darken'] = this.adjust(avatarSetting.human_skin_color, -50);
+    // avatarSetting['human_hair_color_lighten'] = this.adjust(avatarSetting.human_hair_color, 150);
 
    
     return avatarSetting;
