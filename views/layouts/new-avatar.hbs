@@ -5,10 +5,11 @@
  width="{{width}}" height="{{height}}" viewBox="0 0 300 580">
 <g transform="translate({{leftBody}}, {{topBody}})">
 
-    
-    {{#ifeq sex_bio 1}}
-        <defs>
+ <defs>
             <style>
+                .isolate {
+                    isolation: isolate;
+                }
                 .human_color {
                     fill: {{human_skin_color}};
                 }
@@ -36,44 +37,11 @@
                 }
             </style>
         </defs>
-    {{/ifeq}}
+  
 
     {{#ifeq sex_bio 0}}
         <defs>
             <style>
-                .isolate {
-                isolation: isolate;
-                }
-
-                .human_color {
-                    fill: #e2c6c2;
-                }
-
-                .human_color,
-                .opacity_01,
-                .color_clothing,
-                .primary_color,
-                .opacity_02 {
-                    fill-rule: evenodd;
-                }
-
-                .opacity_01 {
-                    opacity: 0.1;
-                }
-
-                .opacity_02,
-                .opacity_02 {
-                    opacity: 0.2;
-                }
-
-                .color_clothing {
-                    fill: #c13d36;
-                }
-
-                .primary_color {
-                    fill: #58b77a;
-                }
-
                 .opacity_02 {
                     mix-blend-mode: multiply;
                 }
@@ -1108,15 +1076,6 @@
 
     <defs>
         <style>
-    
-.isolate {
-                isolation: isolate;
-            }
-
-            .primary_color {
-                fill: {{primary_color}};
-            }
-
             .opacity_02,
             .opacity_02_white {
                 opacity: 0.2;
@@ -1966,10 +1925,6 @@
 
 
 </g>
-
-
-
-
 
 
 </svg>
