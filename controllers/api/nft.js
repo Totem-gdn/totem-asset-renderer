@@ -15,7 +15,6 @@ class NFTController {
 
     if (type === 'item' || type === 'avatar') {
       const nft = await nftHelper.get(type, id);
-      nft.weapon_material = 'Wood'
       console.log('nfft', nft);
       if (nft) {
         res.setHeader('Content-Type', 'image/svg+xml');
