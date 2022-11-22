@@ -15,17 +15,15 @@ class NFTController {
 
     if (type === 'item' || type === 'avatar') {
       const nft = await nftHelper.get(type, id);
+      nft.weapon_material = 'Wood'
       console.log('nfft', nft);
       if (nft) {
         res.setHeader('Content-Type', 'image/svg+xml');
         if (type === 'item') {
-          res.render('layouts/item', {
-            layout: 'item.hbs',
+          res.render('layouts/new-item', {
+            ...nft,
+            layout: 'new-item.hbs',
             color: nft?.primary_color || '#FFD011',
-            weaponColor: nft?.weaponColor,
-            typeColor1: nft?. [0],
-            typeColor2: nft?.typeColors[1],
-            typeColor3: nft?.typeColors[2],
             width: width,
             height: height,
             deltaX: width / 100 * 50,

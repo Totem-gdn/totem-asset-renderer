@@ -33,7 +33,7 @@ class NFT {
       }
 
       if (type === 'item') {
-        rJson = this.generateItemJson(settings);
+        rJson = settings;
       }
 
       if (type === 'avatar') {
@@ -45,46 +45,6 @@ class NFT {
     }
   }
 
-  generateItemJson(itemSetting) {
-    itemSetting.typeColors = ['#84DFF3', '#B5F9E8', '#51A490'];
-    switch (itemSetting.classical_element) {
-      case 'Air':
-        itemSetting.typeColors = ['#84DFF3', '#B5F9E8', '#51A490'];
-        break;
-      case 'Earth':
-        itemSetting.typeColors = ['#9FFC2A', '#36ED7F', '#418E1D'];
-        break;
-      case 'Fire':
-        itemSetting.typeColors = ['#FC2A50', '#ED3636', '#9C1818'];
-        break;
-      case 'Water':
-        itemSetting.typeColors = ['#2A97FC', '#73A3D0', '#184D9C'];
-        break;
-      default:
-        itemSetting.typeColors = ['#9FFC2A', '#36ED7F', '#418E1D'];
-        break;
-    }
-    itemSetting.weaponColor = '#8A939B';
-    switch (itemSetting.weapon_material) {
-      case 'Iron':
-        itemSetting.weaponColor = '#61666A';
-        break;
-      case 'Steel':
-        itemSetting.weaponColor = '#71797E';
-        break;
-      case 'Silver':
-        itemSetting.weaponColor = '#C0C0C0';
-        break;
-      case 'Gold':
-        itemSetting.weaponColor = '#FFD700';
-        break;
-      default:
-        itemSetting.weaponColor = '#8A939B';
-        break;
-    }
-
-    return itemSetting;
-  }
 
   generateAvatarJson(avatarSetting) {
     // avatarSetting['human_skin_color_darken'] = this.adjust(avatarSetting.human_skin_color, -50);
