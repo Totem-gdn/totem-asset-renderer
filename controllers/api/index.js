@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  nft     : require('./nft')
+  nft: require('./nft')
 }
