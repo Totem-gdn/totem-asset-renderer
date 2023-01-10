@@ -6,6 +6,7 @@ replicaCount: 1
 
 image:
   repository: 667950714614.dkr.ecr.us-east-1.amazonaws.com/totem-asset-renderer
+  #Change region in the future 
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
@@ -24,7 +25,7 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:667950714614:certificate/aa68bfac-fe5d-4b63-972e-91aa3e12a669
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
   hosts:
     - host: test-dev-totem-asset-renderer.totem-explorer.com
