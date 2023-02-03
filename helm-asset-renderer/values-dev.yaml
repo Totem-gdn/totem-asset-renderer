@@ -2,8 +2,8 @@ replicaCount: 1
 
 image:
   repository: 667950714614.dkr.ecr.us-east-1.amazonaws.com/asset-renderer
-  #Change region in the future 
   pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
 
 fullnameOverride: "asset-renderer-dev"
@@ -21,28 +21,19 @@ ingress:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/success-codes: '404'
     alb.ingress.kubernetes.io/group.name: main
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:667950714614:certificate/0b77c545-fab7-4f69-a27f-6f7c74bc61d6
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:667950714614:certificate/e3ca48cc-c14e-434f-88ec-52310f97cfbc
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
+    external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
   hosts:
-    - host: dev-test-asset-renderer.totem-explorer.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: asset-renderer
-                port:
-                  number: 80
-          - path: /games/dreadstone-keep
-            pathType: Prefix
-            backend:
-              service:
-                name: asset-renderer
-                port:
-                  number: 80
+    - host: test-dev-asset-renderer.mobilesoftware.systems
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: asset-renderer-dev
+            servicePort: 80
   tls: []
 
 resources:
@@ -74,4 +65,4 @@ env:
    AVATAR_CONTRACT: ""
    ITEM_CONTRACT: ""
    GEM_CONTRACT: ""
- 
+
