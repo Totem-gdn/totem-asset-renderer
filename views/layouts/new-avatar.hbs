@@ -7,11 +7,12 @@
 
 
  
- 
-
-<g transform="translate({{leftBody}}, {{topBody}})" style="filter: drop-shadow(0px 0px 150px {{glow_color}});">
-
-
+{{#ifeq glow 'true'}}
+    <g transform="translate({{leftBody}}, {{topBody}})" style="filter: drop-shadow(0px 0px 150px {{glow_color}});">
+{{/ifeq}}
+{{#ifeq glow 'false'}}
+    <g transform="translate({{leftBody}}, {{topBody}})">
+{{/ifeq}}
 
 
  <defs>

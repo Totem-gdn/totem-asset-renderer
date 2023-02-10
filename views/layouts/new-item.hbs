@@ -1,7 +1,11 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="{{width}}" height="{{height}}" viewBox="0 0 200 580">
-   
+    {{#ifeq glow 'true'}}
+        <g style="filter: drop-shadow(0px 0px 150px {{glow_color}});" class="main-block">
+    {{/ifeq}}
+    {{#ifeq glow 'false'}}
+        <g class="main-block">
+    {{/ifeq}}
 
-    <g style="filter: drop-shadow(0px 0px 150px {{glow_color}});" class="main-block">
 
         <defs>
             <style>
