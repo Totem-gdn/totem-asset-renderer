@@ -21,13 +21,13 @@ ingress:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/success-codes: '404'
     alb.ingress.kubernetes.io/group.name: main
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:667950714614:certificate/e3ca48cc-c14e-434f-88ec-52310f97cfbc
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:667950714614:certificate/d275ecd4-8a7f-47e1-bd42-d32c73c89688
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
     external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
   hosts:
-    - host: test-dev-asset-renderer.mobilesoftware.systems
+    - host: test-asset-renderer-dev.totem-explorer.com
       paths:
         - path: /
           pathType: Prefix
@@ -59,10 +59,5 @@ tolerations:
     effect: "NoSchedule"
 
 env:
-   host: ""
-   port: ""
-   API_URL: ""
-   AVATAR_CONTRACT: ""
-   ITEM_CONTRACT: ""
-   GEM_CONTRACT: ""
+    ENV: ""
 
