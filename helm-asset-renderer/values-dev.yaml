@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: 667950714614.dkr.ecr.us-east-1.amazonaws.com/asset-renderer
+  repository: 667950714614.dkr.ecr.us-east-2.amazonaws.com/asset-renderer
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
@@ -27,7 +27,7 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
   hosts:
-    - host: test-asset-renderer-dev.totem-explorer.com
+    - host: dev-asset-renderer.totem-explorer.com
       paths:
         - path: /
           pathType: Prefix
