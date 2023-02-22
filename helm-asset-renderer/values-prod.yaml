@@ -32,7 +32,7 @@ ingress:
     external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
 
   hosts:
-    - host: test-asset-renderer.mobilesoftware.systems
+    - host: asset-renderer.totem-explorer.com
       paths:
         - path: /
           pathType: Prefix
@@ -64,11 +64,6 @@ tolerations:
     effect: "NoSchedule"
 
 env:
-   host: ""
-   port: ""
-   API_URL: ""
-   AVATAR_CONTRACT: ""
-   ITEM_CONTRACT: ""
-   GEM_CONTRACT: ""
+   ENV: ""
 
 
